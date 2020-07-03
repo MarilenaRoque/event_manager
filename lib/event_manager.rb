@@ -4,7 +4,8 @@ puts fd
 marilena = IO.new(fd)
 content = marilena.readlines
 columns = []
-content.each{ |line|
-  columns = line.split(",")
+content.length.times.each{ |count|
+  next if count.zero?
+  columns = content[count].split(",")
   puts columns[2]
 }
